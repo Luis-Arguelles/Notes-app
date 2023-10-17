@@ -11,11 +11,13 @@ const Tab = createBottomTabNavigator();
   
   export default function App() {
     return (
+
       <NavigationContainer>
         <Tab.Navigator screenOptions={({ route })=> ({
 
           headerShown: false,
           tabBarShowLabel: false,
+          tabBarStyle: {backgroundColor: 'black', borderColor: 'black'},
           tabBarIcon: ({ focused, color, size }) => {
             let iconNameHome;
             let iconNameCreateNote;
@@ -29,18 +31,19 @@ const Tab = createBottomTabNavigator();
 
             // You can return any component that you like here!
             return (
-            <View>
-              <Feather name={iconNameHome} size={size} color={color} />
-              <Ionicons name={iconNameCreateNote} size={size} color={color} />
+            <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
+              <Feather name={iconNameHome} size={size} color={color}/>
+              <Ionicons name={iconNameCreateNote} size={size} color={color}/>
             </View>
           )
           },
-          //tabBarActiveTintColor: 'tomato',
-          //tabBarInactiveTintColor: 'gray',
+          tabBarActiveTintColor: '#03fce3',
+          tabBarInactiveTintColor: 'white',
         })}>
           <Tab.Screen name="Home" component={HomeScreen}/>
           <Tab.Screen name="CreateNote" component={CreateNoteScreen}/>
         </Tab.Navigator>
-      </NavigationContainer>  
+      </NavigationContainer>
     );
+    
   }

@@ -1,11 +1,15 @@
 import { StyleSheet, Text, View, TouchableOpacity, StatusBar} from 'react-native';
 import MainButton from '../../assets/components/mainButton'
+import Input from '../../assets/components/input'
+import TypeList from '../../assets/components/typeList'
 
-export default function SettingsScreen() {
+export default function CreateNoteScreen() {
     return (
       <View style = {styles.container}>
         <StatusBar/>
-        <MainButton text = 'Create note'></MainButton>
+        <Input placeholder = 'Title'></Input>
+        <Input placeholder = 'Note'></Input>
+        <TypeList></TypeList>
       </View>
     );
   }
@@ -13,9 +17,8 @@ export default function SettingsScreen() {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: 'black',
-      alignItems: 'center',
-      justifyContent: 'center',
+      backgroundColor: 'white',
+      padding: 25,
     }
    
   });
