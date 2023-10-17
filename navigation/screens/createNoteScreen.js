@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity, StatusBar} from 'react-native
 import MainButton from '../../assets/components/mainButton'
 import Input from '../../assets/components/input'
 import TypeList from '../../assets/components/typeList'
+import TypeDropDown from '../../assets/components/typeDropDown'
 
 export default function CreateNoteScreen() {
     return (
@@ -9,7 +10,7 @@ export default function CreateNoteScreen() {
         <StatusBar/>
         <Input placeholder = 'Title'></Input>
         <Input placeholder = 'Note'></Input>
-        <TypeList></TypeList>
+        <TypeDropDown/>
       </View>
     );
   }
