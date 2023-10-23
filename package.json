@@ -4,6 +4,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
+    "dev": "nodemon src/index.js",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web"
@@ -17,6 +18,7 @@
     "expo-image-picker": "~14.3.2",
     "expo-status-bar": "~1.6.0",
     "express": "^4.18.2",
+    "mongoose": "^7.6.3",
     "mysql": "^2.18.1",
     "nodemon": "^3.0.1",
     "react": "18.2.0",
