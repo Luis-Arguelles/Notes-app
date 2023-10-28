@@ -8,6 +8,7 @@ const app = express();
 const port = 5000;
 
 // middleware
+app.use(express.json());
 app.use("/user", userRoutes);
 
 app.get("/", (req, res) => res.send("¡Ahí la llevas, perro!"));

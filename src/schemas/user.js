@@ -18,4 +18,7 @@ const userSchema = mongoose.Schema({
         required: true,
         match: /^.{4,}$/
     }
-})
+});
+
+
+module.exports = mongoose.model('User', userSchema);
