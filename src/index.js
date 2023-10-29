@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/user');
+const notesRoutes = require('./routes/note')
 
 require('dotenv').config();
 
@@ -10,6 +11,7 @@ const port = 5000;
 // middleware
 app.use(express.json());
 app.use("/user", userRoutes);
+app.use("/notes", notesRoutes);
 
 app.get("/", (req, res) => res.send("¡Ahí la llevas, perro!"));
 

@@ -4,13 +4,15 @@ import Input from '../../assets/components/input'
 import TypeList from '../../assets/components/typeList'
 import TypeDropDown from '../../assets/components/typeDropDown'
 
+
 export default function CreateNoteScreen() {
+
     return (
       <View style = {styles.container}>
         <StatusBar/>
         <Input placeholder = 'Title'></Input>
         <Input placeholder = 'Note'></Input>
-        <TypeDropDown/>
+        <TypeList></TypeList>
       </View>
     );
   }
@@ -18,7 +20,7 @@ export default function CreateNoteScreen() {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: 'white',
+      backgroundColor: 'black',
       padding: 25,
     }
    

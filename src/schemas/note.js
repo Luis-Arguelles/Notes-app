@@ -11,13 +11,12 @@ const noteSchema = mongoose.Schema({
 
         sourceType: {
             type: String,
-            enum: ['Book', 'Article', 'Magazine', 'Other'],
+            enum: ['Book', 'Article', 'Magazine', 'Journal', 'Reflection', 'Poetry/Rhymes', 'Other'],
             required: true
         },
 
         title: {
-            type: String,
-            required: true
+            type: String
         },
 
         publicationDate: {
@@ -29,8 +28,11 @@ const noteSchema = mongoose.Schema({
         }
     },
 
-    date: {
+    noteDate: {
         type: Date,
         required: true
     }
 })
+
+
+module.exports = mongoose.model("Note", noteSchema);

@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const userSchema = require('../schemas/user')
+const User = require('../schemas/user')
 
 router.post("/create", (req, res) => {
 
-    const user = userSchema(req.body);
+    const user = User(req.body);
 
     user
         .save()
@@ -15,7 +15,7 @@ router.post("/create", (req, res) => {
 
 router.get("/", (req, res) => {
 
-    userSchema
+    User
         .find()
         .then(data => res.json(data))
         .catch(error => res.json({message: error}))

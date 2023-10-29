@@ -4,6 +4,9 @@ import { Dropdown } from 'react-native-element-dropdown';
 import AntDesign from '@expo/vector-icons/AntDesign';
 
 const data = [
+  { label: "Book", value: "Book"},
+  { label: "Article", value: "Article"},
+  { label: "Magazine", value: "Magazine"},
   { label: 'Journal', value: 'Journal' },
   { label: 'Reflection', value: 'Reflection' },
   { label: 'Poetry/Rhymes', value: 'Poetry/Rhymes' },
@@ -19,11 +22,23 @@ const DropdownComponent = () => {
 
       <Dropdown
         style={styles.dropdown}
+        placeholderStyle={{color: '#c2c2c2'}}
+        inputSearchStyle={{color: 'white'}}
+        itemTextStyle={{color: 'white'}}
+        containerStyle={{backgroundColor: 'black', borderRadius: 10, borderColor: '#03fce3'}}
+        selectedTextStyle={{color: 'white'}}
+        activeColor='#171717'
+        iconColor='gray'
         data={data}
         search
         labelField="label"
         valueField="value"
-        placeholder={!isFocus ? 'Select item' : '...'}
+        onFocus={
+          () => {
+            setIsFocus(true);
+          } 
+        }
+        placeholder={!isFocus ? 'Select type of note' : '...'}
         searchPlaceholder="Search..."
         value={value}
         onChange={item => {
@@ -39,17 +54,15 @@ const DropdownComponent = () => {
 export default DropdownComponent;
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'white',
-    padding: 16,
-    paddingLeft: 5
-  },
+
   dropdown: {
-    height: 50,
-    borderColor: 'gray',
+    height: 40,
+    width: 200,
+    borderColor: '#03fce3',
     borderWidth: 0.5,
     borderRadius: 8,
-    paddingHorizontal: 8,
+    padding: 8,
+    margin: 5
   },
   icon: {
     marginRight: 5,
